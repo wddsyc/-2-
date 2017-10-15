@@ -82,6 +82,10 @@ body {
     transform: rotateY(180deg); }
   .main-view .notes-view {
     z-index: 1; }
+    .main-view .notes-view .notes .note {
+      line-height: 2;
+      padding-left: 15px;
+      border-bottom: solid 1px deepskyblue; }
     .main-view .notes-view .add-note {
       display: flex;
       justify-content: center;
