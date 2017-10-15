@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%; }
+
+body {
+  margin: 0;
+  color: #333;
+  background: #f8f8f8;
+  font-family: Helvetica, sans-serif;
+  font-size: 25px; }
+
+.app {
+  height: 100%;
+  perspective: 1000px;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent; }
+  .app .fa {
+    cursor: pointer; }
+
+.note-view, .main-view {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: gainsboro; }
+
+.note-view {
+  transform: translateX(100%);
+  transition: .6s; }
+  .note-view.push {
+    transform: translateX(0); }
+  .note-view .header {
+    height: 7%;
+    background: deepskyblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white; }
+    .note-view .header .fa {
+      margin: 0 15px 0 15px; }
+  .note-view .content {
+    height: 93vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .note-view .content .editor {
+      border: 1px solid #eee;
+      height: 96%;
+      width: 92%;
+      resize: none; }
+
+.main-view {
+  transform-style: preserve-3d; }
+  .main-view.goset {
+    animation-name: goset;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    box-shadow: 0 0 50px #ccc; }
+  .main-view.gonotes {
+    animation-name: gonotes;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    box-shadow: 0 0 50px #ccc; }
+  .main-view .notes-view, .main-view .setting-view {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden; }
+    .main-view .notes-view .header, .main-view .setting-view .header {
+      height: 7%;
+      background: deepskyblue;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white; }
+      .main-view .notes-view .header .fa, .main-view .setting-view .header .fa {
+        margin: 0 15px 0 15px; }
+  .main-view .setting-view {
+    z-index: -1;
+    transform: rotateY(180deg); }
+  .main-view .notes-view {
+    z-index: 1; }
+    .main-view .notes-view .add-note {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      position: absolute;
+      right: 3%;
+      bottom: 2%;
+      background: deepskyblue;
+      color: white;
+      height: 42.5px;
+      width: 42.5px; }
+
+@keyframes goset {
+  30% {
+    transform: translateZ(-100px); }
+  70% {
+    transform: translateZ(-100px) rotateY(180deg); }
+  100% {
+    transform: translateZ(0) rotateY(180deg); } }
+
+@keyframes gonotes {
+  0% {
+    transform: translateZ(0) rotateY(180deg); }
+  30% {
+    transform: translateZ(-100px) rotateY(180deg); }
+  70% {
+    transform: translateZ(-100px) rotateY(0); }
+  100% {
+    transform: translateZ(0) rotateY(0); } }

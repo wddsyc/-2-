@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 25px; }
+
+body {
+  margin: 0;
+  color: #333;
+  background: #f8f8f8;
+  font-family: Helvetica, sans-serif; }
+
+html, body {
+  height: 100%; }
+
+#app {
+  height: 100%;
+  perspective: 1000px;
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent; }
+
+.main-view {
+  background: skyblue;
+  width: 100%;
+  height: 100%;
+  z-index: -1; }
+
+.note-view {
+  background: yellowgreen;
+  width: 100%;
+  height: 100%;
+  transform: translateX(100%);
+  z-index: 100; }
+
+.app {
+  position: relative;
+  height: 100%;
+  perspective: 1000px; }
+
+.main-view {
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  position: absolute;
+  background: saddlebrown; }
