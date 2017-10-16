@@ -85,7 +85,10 @@ body {
     .main-view .notes-view .notes .note {
       line-height: 2;
       padding-left: 15px;
-      border-bottom: solid 1px deepskyblue; }
+      border-bottom: solid 1px deepskyblue;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
     .main-view .notes-view .add-note {
       display: flex;
       justify-content: center;
